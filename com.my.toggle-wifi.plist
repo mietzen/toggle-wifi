@@ -7,7 +7,7 @@
     <string>com.my.toggle-wifi</string>
     <key>ProgramArguments</key>
     <array>
-        <string>#TOGGLE-WIFI-PATH#</string>
+        <string>$TOGGLE-WIFI-PATH$</string>
     </array>
     <key>WatchPaths</key>
     <array>
