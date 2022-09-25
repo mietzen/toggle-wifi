@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Search for python3 installation, prefer homebrew
+if ! command -v brew &> /dev/null ; then
+    echo "WARNING: Homebrew not on PATH!"
+    if ! test -f "/opt/homebrew/bin/brew"; then
+        if ! test -f "/usr/local/bin/brew"; then
+            echo "WARNING: Homebrew not found! Trying to use systems python3!"
+            if ! command -v python3 &> /dev/null ; then
+                echo "ERROR: python3 not found"
+                exit 1
+            else
+                PYTHON3=$(which python3)
+            fi
+        else
+            PYTHON3="/usr/local/bin/python3"
+        fi
+    else
+        PYTHON3="/opt/homebrew/bin/python3"
+    fi
+else
+    if ! brew ls --versions python > /dev/null; then
+        echo "WARNING: python3 not installed via homebrew! Trying to use systems python3!"
+        if ! command -v python3 &> /dev/null ; then
+            echo "ERROR: python3 not found"
+            exit 1
+        fi
+    else
+        PYTHON3=$(which python3)
+    fi
+fi
+
+$PYTHON3 "$0.py"
