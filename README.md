@@ -9,7 +9,7 @@ Notifiactions are realized using [dataJAR/Notifier](https://github.com/dataJAR/N
 
 ## Install
 
-Toggle-Wifi will be installed as [homebrew/tap](https://github.com/mietzen/homebrew-toggle-wifi/blob/main/toggle-wifi.rb).
+Toggle-Wifi will be installed as [homebrew/tap](https://github.com/mietzen/homebrew-toggle-wifi/blob/main/toggle-wifi.rb). Tested on macOS 12 Monterey.
 
 ```
 brew tap mietzen/toggle-wifi update
