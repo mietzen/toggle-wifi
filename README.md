@@ -1,7 +1,7 @@
 # Toggle-Wifi
 
 Toggle-Wifi will turn off your Wifi connection if a ethernet adapter is active and turn it back on if there is no active ethernet adapter.
-Notifiactions are realized using [dataJAR/Notifier](https://github.com/dataJAR/Notifier)
+Notifiactions are realized using [dataJAR/Notifier](https://github.com/dataJAR/Notifier).
 
 ![](wifi-turned-on.gif)
 
@@ -9,7 +9,7 @@ Notifiactions are realized using [dataJAR/Notifier](https://github.com/dataJAR/N
 
 ## Install
 
-Toggle-Wifi will be installed as homebrew/tap.
+Toggle-Wifi will be installed as [homebrew/tap](https://github.com/mietzen/homebrew-toggle-wifi/blob/main/toggle-wifi.rb).
 
 ```
 brew tap mietzen/toggle-wifi update
