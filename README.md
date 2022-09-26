@@ -19,6 +19,6 @@ brew services start mietzen/toggle-wifi/toggle-wifi
 
 ## Turn On/Off Notifications
 
-You can turn the Notifications On/Off via Notifications & Focus in System Prefrences:
+You can turn the Notifications On/Off via Notifications & Focus in System Preferences:
 
 ![](Notifications.png)
