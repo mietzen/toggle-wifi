@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Search for python3 installation
-if ! command -v brew &> /dev/null ; then
-    echo "ERROR: Homebrew not on PATH!"
-    exit 1
-fi
-if ! brew ls --versions python > /dev/null; then
-    echo "ERROR: python3 not found"
-    exit 1
+if ! test -f "/opt/homebrew/bin/brew"; then
+    if ! test -f "/usr/local/bin/brew"; then
+        echo "ERROR: Homebrew not found!"
+        exit 23
+    else
+        HOMEBREW_PREFIX="/usr/local"
+    fi
+else
+    HOMEBREW_PREFIX="/opt/homebrew"
 fi
 
-VERSION=$(brew ls --versions toggle-wifi | awk '{ print $2 }')
-HOMEBREW_PREFIX=$(brew --prefix)
-python3 $HOMEBREW_PREFIX/Cellar/toggle-wifi/$VERSION/toggle-wifi.py
+VERSION=$($HOMEBREW_PREFIX/bin/brew ls --versions toggle-wifi | awk '{ print $2 }' | head -n 1)
+$HOMEBREW_PREFIX/bin/python3 $HOMEBREW_PREFIX/Cellar/toggle-wifi/$VERSION/toggle-wifi.py
