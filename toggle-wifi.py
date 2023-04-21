@@ -50,7 +50,7 @@ def notify(msg, msg_type='banner', msg_title=None, msg_subtitle=None, msg_action
 
 
 def main():
-    regex_devices = '^\(Hardware Port: ([A-Za-z0-9\-\/ ]+), Device: (en\d+)\)$'
+    regex_devices = '^\(Hardware Port: ([A-Za-z0-9\.\-\/ ]+), Device: (en\d+)\)$'
     regex_device_status = '\tstatus: (inactive|active)$'
     devices = []
     for line in subprocess.check_output(['networksetup', '-listnetworkserviceorder']).decode('utf-8').split('\n'):
